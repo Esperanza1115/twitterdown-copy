@@ -1,0 +1,139 @@
+---
+const faqs = [
+  {
+    id: 1,
+    question: "Is it legal to download Twitter videos?",
+    answer: "TwitterDown is designed for personal use. While downloading videos for personal viewing is generally acceptable, please respect copyright laws and the original creator's rights. Do not republish or monetize content without proper permission."
+  },
+  {
+    id: 2,
+    question: "Do I need a Twitter account to use TwitterDown?",
+    answer: "No, you don't need a Twitter account to use TwitterDown. Simply copy the URL of the video you want to download and paste it into our tool."
+  },
+  {
+    id: 3,
+    question: "What video formats does TwitterDown support?",
+    answer: "TwitterDown supports twitter to mp4 format downloads, which is the most universal and compatible video format that works on all devices and platforms. Whether you search for 'twitter download', 'tw down' or 'download twitter video', our twitter mp4 downloader provides reliable downloads."
+  },
+  {
+    id: 4,
+    question: "Is there a limit to how many videos I can download?",
+    answer: "No limits at all! All users can download unlimited single videos and batch downloads, supporting all resolutions (720p, 1080p, 4K, etc.). Only API access requires a paid subscription."
+  },
+  {
+    id: 5,
+    question: "Can I download private Twitter videos?",
+    answer: "No, TwitterDown can only download publicly available videos. Videos from private accounts or direct messages cannot be accessed."
+  },
+  {
+    id: 6,
+    question: "How do I choose the right video quality?",
+    answer: "You can select quality based on your needs: HD is perfect for archiving and editing, while standard quality is ideal for quick previews and saving storage space. We offer multiple resolution options for you to choose from."
+  },
+  {
+    id: 7,
+    question: "Is TwitterDown the same as 'tw down' or other twitter downloaders?",
+    answer: "Yes, TwitterDown is often referred to as 'tw down' by users. Our tool provides the same reliable service whether you search for 'twitter video downloader online', 'download twitter video online', 'twitter dl' or simply 'tw down'. We're your go-to solution for all twitter downloads."
+  }
+];
+---
+
+<section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Frequently Asked <span class="gradient-text">Questions</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Have another question? Contact our support team for assistance.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden" data-faq-id={faq.id}>
+          <button
+            class="faq-button w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-lg flex items-center justify-center font-bold text-sm">
+                {faq.id}
+              </span>
+              <span class="font-semibold text-lg">{faq.question}</span>
+            </span>
+            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-gray-600 pl-12">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Still have questions?</p>
+      <a
+        href="mailto:support@twitterdown.com"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        Contact Support
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Initialize FAQ accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item) => {
+    const button = item.querySelector('.faq-button');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    button?.addEventListener('click', () => {
+      const isExpanded = button?.getAttribute('aria-expanded') === 'true';
+
+      // Close all other items
+      faqItems.forEach((otherItem) => {
+        const otherButton = otherItem.querySelector('.faq-button');
+        const otherContent = otherItem.querySelector('.faq-content');
+        const otherIcon = otherItem.querySelector('.faq-icon');
+
+        otherButton?.setAttribute('aria-expanded', 'false');
+        otherContent?.classList.add('hidden');
+        otherIcon?.classList.remove('rotate-180');
+      });
+
+      // Toggle current item
+      if (!isExpanded) {
+        button?.setAttribute('aria-expanded', 'true');
+        content?.classList.remove('hidden');
+        icon?.classList.add('rotate-180');
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq-item {
+    @apply bg-white rounded-xl transition-all duration-200;
+  }
+
+  .faq-item:hover {
+    @apply shadow-md;
+  }
+
+  .faq-button[aria-expanded="true"] {
+    @apply bg-gray-50;
+  }
+</style>

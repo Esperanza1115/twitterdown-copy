@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitterDown - Free Twitter Video Downloader Online</title>
+    <meta name="description" content="TwitterDown is a free online twitter video downloader. Download Twitter videos, GIFs and images in high quality. Fast, secure and easy to use.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body class="min-h-screen bg-white font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="py-3 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="hidden justify-between lg:flex items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2">
+                    <img src="./images/logo.svg" alt="TwitterDown logo" class="w-8 h-8">
+                    <span class="text-xl text-blue-600 font-bold">TwitterDown</span>
+                </a>
+
+                <!-- Nav Links -->
+                <div class="flex items-center gap-1">
+                    <a href="#feature" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        Features
+                    </a>
+                    <a href="#pricing" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path>
+                        </svg>
+                        Pricing
+                    </a>
+                    <a href="#usage" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="m21.406 6.086-9-4a1.001 1.001 0 0 0-.813 0l-9 4c-.02.009-.034.024-.054.035-.028.014-.058.023-.084.04-.022.015-.039.034-.06.05a.87.87 0 0 0-.19.194c-.02.028-.041.053-.059.081a1.119 1.119 0 0 0-.076.165c-.009.027-.023.052-.031.079A1.013 1.013 0 0 0 2 7v10c0 .396.232.753.594.914l9 4c.13.058.268.086.406.086a.997.997 0 0 0 .402-.096l.004.01 9-4A.999.999 0 0 0 22 17V7a.999.999 0 0 0-.594-.914zM12 4.095 18.538 7 12 9.905l-1.308-.581L5.463 7 12 4.095zM4 16.351V8.539l7 3.111v7.811l-7-3.11zm9 3.11V11.65l7-3.111v7.812l-7 3.11z"></path>
+                        </svg>
+                        How It Works
+                    </a>
+                    <a href="/posts" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM7 6H11V10H7V6ZM7 12H17V14H7V12ZM7 16H17V18H7V16ZM13 7H17V9H13V7Z"></path>
+                        </svg>
+                        Blog
+                    </a>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-3">
+                    <!-- Language Selector -->
+                    <button class="flex items-center gap-2 px-2 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"></path>
+                        </svg>
+                        <span class="text-sm font-medium hidden md:block">English</span>
+                    </button>
+
+                    <a href="/api-site" class="flex items-center gap-2 px-4 py-2 text-sm text-blue-600 hover:underline">
+                        API
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+                        </svg>
+                    </a>
+
+                    <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-24 relative">
+        <!-- Grid Background -->
+        <svg class="absolute inset-0 w-full h-full opacity-25 pointer-events-none hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+            <defs>
+                <style>
+                    .grid-line { stroke: #e5e7eb; stroke-width: 1; }
+                </style>
+            </defs>
+            <!-- Grid lines would be here -->
+        </svg>
+
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Announcement Badge -->
+                <a href="#pricing" class="inline-flex items-center gap-3 border border-gray-300 rounded-full px-3 py-1 text-sm hover:bg-gray-50 transition-colors mb-6">
+                    <span class="bg-blue-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">NEW</span>
+                    <span>🎉 TwitterDown is now completely free!</span>
+                </a>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl lg:text-7xl font-bold mb-6 text-gray-900 leading-tight">
+                    Download <span class="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">Twitter Videos Online</span> in Seconds
+                    <span class="block mt-2 text-2xl lg:text-5xl">- Free Twitter Video Downloader</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="text-lg lg:text-xl text-gray-600 mb-8 max-w-4xl">
+                    TwitterDown is the fastest online twitter video downloader and twitter downloader to download twitter videos online and save twitter content easily.<br/>
+                    Copy the tweet URL, paste it in our twitter video downloader input field, and download videos from twitter in high quality MP4 format with our powerful twitter video downloader online tool and twitter downloader service.
+                </p>
+
+                <!-- Download Box -->
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 max-w-4xl mx-auto">
+                    <!-- Tabs -->
+                    <div class="grid grid-cols-2 bg-gray-100 rounded-lg p-1 mb-4">
+                        <button class="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-md text-sm font-medium shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 19H21V21H3V19ZM13 13.1716L19.0711 7.1005L20.4853 8.51472L12 17L3.51472 8.51472L4.92893 7.1005L11 13.1716V2H13V13.1716Z"></path>
+                            </svg>
+                            Single Download
+                        </button>
+                        <button class="flex items-center justify-center gap-2 px-4 py-3 rounded-md text-sm font-medium text-gray-600 hover:bg-white/50 transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2v-4h4v-2h-4V7h-2v4H8v2h4z"></path>
+                            </svg>
+                            Batch Download
+                        </button>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="space-y-4">
+                        <div>
+                            <input type="text" id="videoUrl" placeholder="Paste link from Twitter/X" class="w-full px-4 py-4 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-lg">
+                            <p class="text-sm text-gray-500 mt-2">Enter any Twitter/X video URL to download in high quality for free, all resolutions supported</p>
+                        </div>
+
+                        <button onclick="downloadVideo()" class="w-full px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-colors shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="flex items-center justify-center gap-4 mt-6">
+                        <a href="https://chrome.google.com/webstore" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            Chrome Extension
+                        </a>
+                        <a href="https://www.icloud.com/shortcuts" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            iOS Shortcuts
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Result Area (Hidden by default) -->
+                <div id="resultArea" class="hidden mt-6 bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-20 h-20 bg-gray-200 rounded-lg flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-2">Twitter Video</h3>
+                            <p class="text-sm text-gray-500 mb-4">High Quality MP4 • 1080p</p>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    Download MP4
+                                </button>
+                                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                                    Download GIF
+                                </button>
+                                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                                    Download Images
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="feature" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-5xl font-bold text-center mb-12">Why Choose <span class="text-blue-600">TwitterDown</span></h2>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Simple & Fast</h3>
+                    <p class="text-gray-600">Just copy the tweet URL, paste it in our twitter video downloader input field and download Twitter content online in seconds.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">High Quality Downloads</h3>
+                    <p class="text-gray-600">Get the highest quality version of any Twitter content using our online Twitter download service, converting twitter to mp4.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">No Login Required</h3>
+                    <p class="text-gray-600">Use our tweet downloader and twitter downloader without creating an account or sharing your Twitter credentials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-5xl font-bold text-center mb-4">Choose the Throughput That Matches Your Workflow</h2>
+            <p class="text-gray-600 text-center mb-12">Start free with 10 trial credits, then upgrade for higher RPM limits.</p>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="border border-gray-200 rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold mb-2">Starter</h3>
+                    <p class="text-gray-600 mb-4">Perfect for beginners</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$49</span>
+                        <span class="text-gray-600">/year</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            6,000 credits/year
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Email support
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            API access
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="border-2 border-blue-600 rounded-2xl p-8 relative">
+                    <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">POPULAR</span>
+                    <h3 class="text-xl font-semibold mb-2">Pro</h3>
+                    <p class="text-gray-600 mb-4">For automation creators</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$99</span>
+                        <span class="text-gray-600">/year</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            60,000 credits/year
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Priority processing
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Priority support
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="border border-gray-200 rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold mb-2">Business</h3>
+                    <p class="text-gray-600 mb-4">For teams and bulk workflows</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$299</span>
+                        <span class="text-gray-600">/year</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            120,000 credits/year
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Technical support SLA
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Custom parameters
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="./images/logo.svg" alt="TwitterDown" class="w-8 h-8">
+                        <span class="text-xl font-bold">TwitterDown</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">The fastest Twitter video downloader online.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#feature" class="hover:text-white">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+                        <li><a href="/api-site" class="hover:text-white">API</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/posts" class="hover:text-white">Blog</a></li>
+                        <li><a href="/changelog" class="hover:text-white">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 TwitterDown. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

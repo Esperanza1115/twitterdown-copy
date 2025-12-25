@@ -1,0 +1,90 @@
+---
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    role: "Content Creator",
+    content: "TwitterDown is incredibly fast and easy to use. I download videos daily for my content curation work. The quality is always excellent!",
+    avatar: "SC"
+  },
+  {
+    name: "Michael Roberts",
+    role: "Marketing Manager",
+    content: "The best Twitter video downloader I've used. No registration required, downloads are instant, and the quality options are perfect for our needs.",
+    avatar: "MR"
+  },
+  {
+    name: "Emma Wilson",
+    role: "Social Media Manager",
+    content: "I love that I can download videos without logging into Twitter. This tool saves me so much time every day. Highly recommended!",
+    avatar: "EW"
+  }
+];
+---
+
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        What Users Say <span class="gradient-text">About TwitterDown</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Hear from people who use TwitterDown to download and save Twitter videos.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+          <!-- Rating Stars -->
+          <div class="flex items-center gap-1 mb-4">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg key={star} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+
+          <!-- Quote -->
+          <p class="text-gray-600 mb-6 italic">
+            "{testimonial.content}"
+          </p>
+
+          <!-- Author -->
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+              {testimonial.avatar}
+            </div>
+            <div>
+              <h4 class="font-semibold">{testimonial.name}</h4>
+              <p class="text-sm text-gray-500">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="mt-16 flex flex-wrap items-center justify-center gap-8 opacity-60">
+      <div class="flex items-center gap-2 text-gray-500">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+        </svg>
+        <span class="font-medium">Secure & Private</span>
+      </div>
+      <div class="flex items-center gap-2 text-gray-500">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span class="font-medium">100% Free</span>
+      </div>
+      <div class="flex items-center gap-2 text-gray-500">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+        </svg>
+        <span class="font-medium">Instant Downloads</span>
+      </div>
+    </div>
+  </div>
+</section>

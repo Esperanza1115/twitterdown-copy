@@ -1,0 +1,153 @@
+---
+const footerLinks = {
+  product: [
+    { name: 'Home', href: '#home' },
+    { name: 'Features', href: '#features' },
+    { name: 'How to Use', href: '#how-to-use' },
+    { name: 'FAQ', href: '#faq' },
+  ],
+  legal: [
+    { name: 'Privacy Policy', href: '#privacy' },
+    { name: 'Terms of Service', href: '#terms' },
+    { name: 'DMCA', href: '#dmca' },
+    { name: 'Contact', href: '#contact' },
+  ],
+  social: [
+    {
+      name: 'Twitter',
+      href: 'https://twitter.com',
+      icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
+    },
+    {
+      name: 'Facebook',
+      href: 'https://facebook.com',
+      icon: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'
+    },
+  ]
+};
+---
+
+<footer class="bg-dark text-gray-400 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Main Footer Content -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="#home" class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-bold text-white">TwitterDown</span>
+        </a>
+        <p class="text-sm mb-6">
+          The fastest and most reliable free Twitter video downloader online. Download Twitter videos, GIFs, and images in high quality.
+        </p>
+        <!-- Social Links -->
+        <div class="flex items-center gap-4">
+          {footerLinks.social.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 bg-dark-lighter hover:bg-primary rounded-lg flex items-center justify-center transition-colors"
+              aria-label={social.name}
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d={social.icon}/>
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Product Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Product</h3>
+        <ul class="space-y-3">
+          {footerLinks.product.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-primary transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Legal</h3>
+        <ul class="space-y-3">
+          {footerLinks.legal.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-primary transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Stay Updated</h3>
+        <p class="text-sm mb-4">Get the latest updates and features.</p>
+        <form class="flex flex-col gap-3" onsubmit="return false;">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-3 bg-dark-lighter border border-gray-700 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-white placeholder-gray-500 transition-colors"
+          />
+          <button
+            type="submit"
+            class="px-4 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-colors"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm">
+        © {new Date().getFullYear()} TwitterDown. All rights reserved.
+      </p>
+      <p class="text-sm">
+        Made with ❤️ for the Twitter community
+      </p>
+    </div>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible"
+      aria-label="Back to top"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+      </svg>
+    </button>
+  </div>
+</footer>
+
+<script>
+  // Back to top button
+  const backToTop = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop?.classList.remove('opacity-0', 'invisible');
+      backToTop?.classList.add('opacity-100', 'visible');
+    } else {
+      backToTop?.classList.add('opacity-0', 'invisible');
+      backToTop?.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
