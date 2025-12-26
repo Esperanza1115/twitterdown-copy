@@ -48,28 +48,31 @@ const {
 
 <style is:global>
   :root {
-    /* TwitterDown theme colors - matching the original site */
-    --primary: 180 70% 40%; /* Teal/cyan color #0c7f79 */
+    /* TwitterDown theme colors - matching shadcn/ui and original site */
+    --primary: 180 75% 42%; /* Teal/cyan color - slightly lighter for better visibility */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 180 70% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 180 75% 42%;
 
     --radius: 0.5rem;
   }
@@ -83,7 +86,7 @@ const {
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background text-foreground;
   }
 
   /* Custom scrollbar */
@@ -92,15 +95,15 @@ const {
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gray-100;
+    @apply bg-muted;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 rounded-full;
+    @apply bg-muted-foreground/30 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-400;
+    @apply bg-muted-foreground/50;
   }
 
   /* Gradient text */
@@ -110,11 +113,11 @@ const {
 
   /* Glass effect */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-gray-200;
+    @apply bg-white/80 backdrop-blur-md border border-border;
   }
 
   /* Focus ring */
   .focus-ring:focus {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-ring ring-offset-2;
   }
 </style>

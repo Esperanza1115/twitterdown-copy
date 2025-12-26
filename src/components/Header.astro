@@ -1,76 +1,168 @@
 ---
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Features', href: '#features' },
-  { name: 'How to Use', href: '#how-to-use' },
-  { name: 'FAQ', href: '#faq' },
+  {
+    name: 'Features',
+    href: '#feature',
+    icon: '<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="size-4 shrink-0 mr-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>'
+  },
+  {
+    name: 'Pricing',
+    href: '#pricing',
+    icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0 mr-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"></path></svg>'
+  },
+  {
+    name: 'How It Works',
+    href: '#usage',
+    icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0 mr-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m21.406 6.086-9-4a1.001 1.001 0 0 0-.813 0l-9 4c-.02.009-.034.024-.054.035-.028.014-.058.023-.084.04-.022.015-.039.034-.06.05a.87.87 0 0 0-.19.194c-.02.028-.041.053-.059.081a1.119 1.119 0 0 0-.076.165c-.009.027-.023.052-.031.079A1.013 1.013 0 0 0 2 7v10c0 .396.232.753.594.914l9 4c.13.058.268.086.406.086a.997.997 0 0 0 .402-.096l.004.01 9-4A.999.999 0 0 0 22 17V7a.999.999 0 0 0-.594-.914zM12 4.095 18.538 7 12 9.905l-1.308-.581L5.463 7 12 4.095zM4 16.351V8.539l7 3.111v7.811l-7-3.11zm9 3.11V11.65l7-3.111v7.812l-7 3.11z"></path></svg>'
+  },
+  {
+    name: 'Blog',
+    href: '/posts',
+    icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0 mr-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM7 6H11V10H7V6ZM7 12H17V14H7V12ZM7 16H17V18H7V16ZM13 7H17V9H13V7Z"></path></svg>'
+  },
+  {
+    name: 'Changelog',
+    href: '/changelog',
+    icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0 mr-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12H4C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C9.25022 4 6.82447 5.38734 5.38451 7.50024L8 7.5V9.5H2V3.5H4L3.99989 5.99918C5.82434 3.57075 8.72873 2 12 2ZM13 7L12.9998 11.585L16.2426 14.8284L14.8284 16.2426L10.9998 12.413L11 7H13Z"></path></svg>'
+  },
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 glass">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <a href="#home" class="flex items-center space-x-2">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        </div>
-        <span class="text-xl font-bold gradient-text">TwitterDown</span>
-      </a>
+<section class="py-3">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Desktop Navigation -->
+    <nav class="hidden justify-between lg:flex">
+      <div class="flex items-center gap-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md transition-opacity min-h-[44px] p-2" aria-label="TwitterDown - Go to homepage" title="TwitterDown - Go to homepage">
+          <img src="/logo.png" alt="TwitterDown logo" class="w-8"/>
+          <span class="text-xl text-primary font-bold">TwitterDown</span>
+        </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-600 hover:text-primary transition-colors duration-200 font-medium"
-          >
-            {item.name}
-          </a>
-        ))}
-        <button class="px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg">
-          Get Started
-        </button>
+        <!-- Navigation Links -->
+        <div class="flex items-center">
+          <nav aria-label="Main" class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+            <ul class="group flex flex-1 list-none items-center justify-center space-x-1" dir="ltr">
+              {navItems.map((item) => (
+                <li>
+                  <a class="text-muted-foreground inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" href={item.href}>
+                    <set:html html={item.icon} />
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
 
-      <!-- Mobile menu button -->
-      <button
-        id="mobile-menu-button"
-        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-        aria-label="Toggle menu"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
+      <!-- Right Side -->
+      <div class="shrink-0 flex gap-3 items-center">
+        <!-- Language Selector -->
+        <button
+          type="button"
+          class="flex items-center justify-between border border-input text-sm ring-offset-background placeholder:text-muted-foreground focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto h-auto border-none bg-transparent p-2 text-muted-foreground hover:text-foreground hover:bg-accent/50 focus:ring-0 focus:ring-offset-0 focus:outline-none transition-colors duration-200 rounded-md [&>svg]:hidden"
+          aria-label="Change language. Current language: English"
+          title="Change language. Current language: English"
+        >
+          <div class="flex items-center gap-2">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-lg shrink-0" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"></path>
+            </svg>
+            <span class="text-sm font-medium whitespace-nowrap hidden md:block">English</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 opacity-50" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+
+        <!-- API Link -->
+        <a
+          href="/api-site"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] text-primary underline-offset-4 hover:underline h-10 px-4 py-2 inline-flex items-center justify-center gap-2 min-h-[44px] min-w-[44px] px-6 py-2 text-sm font-medium whitespace-nowrap"
+          aria-label="API"
+          title="API"
+        >
+          API
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+          </svg>
+        </a>
+
+        <!-- Sign In Button -->
+        <div class="flex items-center gap-x-2 px-2">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+            Sign In
+          </button>
+        </div>
+      </div>
+    </nav>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col space-y-2">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="px-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
-          >
-            {item.name}
-          </a>
-        ))}
-        <button class="px-4 py-2 bg-primary text-white rounded-lg font-medium">
-          Get Started
+    <div class="block lg:hidden">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="/logo.png" alt="TwitterDown logo" class="w-8"/>
+          <span class="text-xl font-bold">TwitterDown</span>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button
+          id="mobile-menu-button"
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10"
+          aria-label="Open navigation menu"
+          title="Open navigation menu"
+          type="button"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
         </button>
       </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col space-y-2 pt-4">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-muted-foreground inline-flex items-center justify-start gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+            >
+              <set:html html={item.icon} />
+              {item.name}
+            </a>
+          ))}
+          <a
+            href="/api-site"
+            class="text-muted-foreground inline-flex items-center justify-start gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+          >
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="size-4 shrink-0" style="cursor:default" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+            </svg>
+            API
+          </a>
+          <button class="inline-flex items-center justify-start gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-h-[44px] min-w-[44px] bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full text-left">
+            Sign In
+          </button>
+        </div>
+      </div>
     </div>
-  </nav>
-</header>
+  </div>
+</section>
 
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
   mobileMenuButton?.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+    mobileMenuButton.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
     mobileMenu?.classList.toggle('hidden');
   });
 </script>
